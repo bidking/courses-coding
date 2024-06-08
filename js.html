@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tutorial</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Font Awesome for the dropdown icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional styling */
+        .dropdown {
+            border: 5px solid #474747; /* Border */
+            padding: 1rem;
+            width: 80%;
+            margin-left: 10%;
+            border-radius: 0.5rem; /* Rounded corners */
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown-title {
+            padding: 0.5rem 1rem; /* Padding */
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 1rem; /* Spacing from right */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 9999; /* Ensure it's above other content */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="font-bold">JavaScript Tutorial</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-8">
+        <!-- Dropdown Title - JavaScript Basics -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="javascriptDropdownTitle">Pengenalan JavaScript <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - JavaScript Basics -->
+            <div class="dropdown-content mt-2 ml-4" id="javascriptDropdownContent">
+                <p class="mb-4">
+                    JavaScript adalah bahasa pemrograman yang sering digunakan di web untuk menambahkan interaktivitas pada halaman web. Dengan JavaScript, Anda dapat mengontrol perilaku halaman web, mengubah konten HTML dan CSS secara dinamis, serta berinteraksi dengan pengguna melalui formulir, tombol, dan elemen lainnya.
+                </p>
+                <p>
+                    Beberapa konsep utama dalam JavaScript meliputi:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Variabel: Variabel digunakan untuk menyimpan nilai dan dapat diubah selama eksekusi program.</li>
+                    <li>Tipe Data: JavaScript memiliki beberapa tipe data, termasuk string, number, boolean, array, dan object.</li>
+                    <li>Operator: Operator digunakan untuk melakukan operasi pada variabel dan nilai.</li>
+                    <li>Kondisional: Kondisional, seperti if-else statement, digunakan untuk menjalankan blok kode berdasarkan kondisi tertentu.</li>
+                    <li>Loop: Loop, seperti for dan while loop, digunakan untuk mengeksekusi blok kode secara berulang.</li>
+                    <li>Fungsi: Fungsi digunakan untuk mengelompokkan blok kode yang dapat dipanggil dan digunakan kembali.</li>
+                    <li>Event Handling: JavaScript digunakan untuk menangani event, seperti klik mouse atau input pengguna.</li>
+                    <li>DOM Manipulation: Document Object Model (DOM) memungkinkan JavaScript untuk mengubah struktur, gaya, dan konten halaman web.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - JavaScript Variables -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="variablesDropdownTitle">Variabel JavaScript <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - JavaScript Variables -->
+            <div class="dropdown-content mt-2 ml-4" id="variablesDropdownContent">
+                <p class="mb-4">
+                    Variabel dalam JavaScript digunakan untuk menyimpan data dan memberi nama pada data tersebut agar dapat diakses dan digunakan kembali dalam program. Berikut adalah beberapa hal yang perlu diketahui tentang variabel dalam JavaScript:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Deklarasi: Variabel dideklarasikan menggunakan kata kunci <code>var</code>, <code>let</code>, atau <code>const</code>.</li>
+                    <li>Tipe Data: JavaScript memiliki tipe data dinamis, yang berarti Anda tidak perlu menentukan tipe data secara eksplisit saat mendeklarasikan variabel.</li>
+                    <li>Scope: Variabel JavaScript memiliki scope, yang mengatur di mana variabel dapat diakses dalam program.</li>
+                    <li>Hoisting: Variabel JavaScript dapat "ditinggikan" (hoisted) ke atas cakupan fungsinya, yang berarti Anda dapat menggunakan variabel sebelum dideklarasikan.</li>
+                    <li>Nilai Awal: Jika variabel tidak diinisialisasi, maka nilainya akan <code>undefined</code>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - JavaScript Functions -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="functionsDropdownTitle">Fungsi JavaScript <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - JavaScript Functions -->
+            <div class="dropdown-content mt-2 ml-4" id="functionsDropdownContent">
+                <p class="mb-4">
+                    Fungsi dalam JavaScript digunakan untuk mengelompokkan blok kode yang dapat dipanggil dan digunakan kembali. Berikut adalah beberapa hal yang perlu diketahui tentang fungsi dalam JavaScript:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Deklarasi: Fungsi dapat dideklarasikan menggunakan kata kunci <code>function</code>.</li>
+                    <li>Parameter: Fungsi dapat menerima parameter, yang digunakan untuk mengirim data ke dalam fungsi.</li>
+                    <li>Pengembalian Nilai: Fungsi dapat mengembalikan nilai menggunakan kata kunci <code>return</code>.</li>
+                    <li>Ekspresi Fungsi: Fungsi juga dapat didefinisikan menggunakan ekspresi fungsi atau fungsi anonim.</li>
+                    <li>Arrow Function: Arrow function adalah cara baru untuk mendeklarasikan fungsi dalam JavaScript yang lebih singkat.</li>
+                    <li>Callback: Callback adalah fungsi yang dikirimkan sebagai argumen ke fungsi lain dan akan dipanggil setelah fungsi tersebut selesai dieksekusi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - JavaScript DOM -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="domDropdownTitle">Manipulasi DOM JavaScript <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - JavaScript DOM -->
+            <div class="dropdown-content mt-2 ml-4" id="domDropdownContent">
+                <p class="mb-4">
+                    Manipulasi Document Object Model (DOM) adalah proses mengubah struktur, gaya, dan konten halaman web menggunakan JavaScript. Berikut adalah beberapa cara untuk memanipulasi DOM dalam JavaScript:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Seleksi Elemen: JavaScript dapat digunakan untuk memilih elemen-elemen di halaman web menggunakan metode seperti <code>document.getElementById()</code> atau <code>document.querySelector()</code>.</li>
+                    <li>Manipulasi Konten: Anda dapat mengubah konten elemen, seperti teks atau atribut, menggunakan properti seperti <code>innerHTML</code> atau <code>textContent</code>.</li>
+                    <li>Manipulasi Gaya: Anda dapat mengubah gaya elemen menggunakan properti seperti <code>style</code> atau <code>classList</code>.</li>
+                    <li>Menambahkan atau Menghapus Elemen: JavaScript dapat digunakan untuk menambahkan atau menghapus elemen dari halaman web menggunakan metode seperti <code>appendChild()</code> atau <code>removeChild()</code>.</li>
+                    <li>Event Handling: JavaScript dapat digunakan untuk menangani event, seperti klik mouse atau input pengguna, dan menanggapi event tersebut dengan menjalankan fungsi tertentu.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="back-button">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <!-- Include Font Awesome for the dropdown icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- JavaScript to handle dropdown click -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const javascriptDropdownTitle = document.getElementById("javascriptDropdownTitle");
+            const javascriptDropdownContent = document.getElementById("javascriptDropdownContent");
+            const variablesDropdownTitle = document.getElementById("variablesDropdownTitle");
+            const variablesDropdownContent = document.getElementById("variablesDropdownContent");
+            const functionsDropdownTitle = document.getElementById("functionsDropdownTitle");
+            const functionsDropdownContent = document.getElementById("functionsDropdownContent");
+            const domDropdownTitle = document.getElementById("domDropdownTitle");
+            const domDropdownContent = document.getElementById("domDropdownContent");
+
+            javascriptDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(javascriptDropdownContent);
+            });
+
+            variablesDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(variablesDropdownContent);
+            });
+
+            functionsDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(functionsDropdownContent);
+            });
+
+            domDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(domDropdownContent);
+            });
+
+            function toggleDropdown(dropdownContent) {
+                // Toggle dropdown content visibility
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            }
+        });
+    </script>
+</body>
+
+</html>

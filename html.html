@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorial</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Font Awesome for the dropdown icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional styling */
+        .dropdown {
+            border: 5px solid #474747; /* Border */
+       padding: 1rem;
+       width: 80%;
+       margin-left: 10%;
+        border-radius: 0.5rem; /* Rounded corners */
+        }
+
+      .dropdown-content {
+            display: none;
+          
+        }
+
+       
+
+        .dropdown-title {
+            padding: 0.5rem 1rem; /* Padding */
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 1rem; /* Spacing from right */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 9999; /* Ensure it's above other content */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="font-bold">HTML Tutorial</span>
+           
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-8">
+        <!-- Dropdown Title - HTML Basics -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="htmlDropdownTitle">Pengenalan HTML <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - HTML Basics -->
+            <div class="dropdown-content mt-2 ml-4" id="htmlDropdownContent">
+                <p class="mb-4">
+                    HyperText Markup Language (HTML) adalah bahasa markah standar untuk dokumen yang dirancang untuk ditampilkan di peramban internet. Ini dapat dibantu oleh teknologi seperti Cascading Style Sheets (CSS) dan bahasa skrip lainnya seperti JavaScript, VBScript, dan PHP. Peramban internet menerima dokumen HTML dari server web atau dari penyimpanan lokal dan membuat dokumen menjadi halaman web multimedia. HTML menggambarkan struktur halaman web secara semantik dan isyarat awal yang disertakan untuk penampilan dokumen. <br>
+                    <blockquote>
+                        Elemen HTML digambarkan oleh tag, ditulis menggunakan tanda kurung siku. Tag seperti <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"><code>&lt;input&gt;</code></a> langsung perkenalkan konten ke dalam halaman. Tag lain seperti <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a> mengelilingi dan memberikan informasi tentang teks dokumen dan mungkin menyertakan tag lain sebagai sub-elemen. Peramban tidak menampilkan tag HTML, tetapi menggunakannya untuk menafsirkan konten halaman.
+                    </blockquote>
+                      HTML dapat menyematkan program yang ditulis dalam bahasa skrip seperti JavaScript, yang memengaruhi perilaku dan konten halaman web. Dimasukkannya CSS mendefinisikan tampilan dan tata letak konten. <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">World Wide Web Consortium</abbr> (W3C)</a>, mantan pengelola HTML dan pemelihara standar CSS saat ini, telah mendorong penggunaan CSS pada HTML presentasi eksplisit sejak 1997.
+                </p>
+            
+            
+            </div>
+        </div>
+        
+
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="attributesDropdownTitle">HTML Attributes <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - Attributes -->
+            <div class="dropdown-content mt-2 ml-4" id="attributesDropdownContent">
+                <p class="mb-4"><blockquote>Tag Pembuka dan Penutup: Setiap elemen HTML dimulai dengan tag pembuka <tag> dan diakhiri dengan tag penutup </tag>.
+                    Paragraf: <p> digunakan untuk menampilkan teks paragraf.
+                    Judul: <h1> hingga <h6> digunakan untuk judul dengan tingkat kepentingan yang berbeda.
+                    Gambar: <img> digunakan untuk menampilkan gambar dalam halaman.
+                    Hyperlink: <a> digunakan untuk membuat hyperlink ke halaman web atau sumber daya lainnya.
+                    Daftar: <ul> untuk daftar tak terurut, <ol> untuk daftar terurut, <li> untuk item daftar.</blockquote></p>
+               
+            </div>
+        </div>
+        
+
+        <!-- Dropdown Title - Tags -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="tagsDropdownTitle">HTML Tags <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - Tags -->
+            <div class="dropdown-content mt-2 ml-4" id="tagsDropdownContent">
+                <p class="mb-4">HTML tags are used to define the structure and layout of a web page. Some common HTML tags include:</p>
+                <ul class="list-disc ml-8">
+                    <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for headings</li>
+                    <li><code>&lt;p&gt;</code> for paragraphs</li>
+                    <li><code>&lt;a&gt;</code> for links</li>
+                    <li><code>&lt;img&gt;</code> for images</li>
+                    <li><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> for lists</li>
+                    <li><code>&lt;div&gt;</code> for grouping content</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - Attributes -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="attributesDropdownTitle">HTML Attributes <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - Attributes -->
+            <div class="dropdown-content mt-2 ml-4" id="attributesDropdownContent">
+                <p class="mb-4">HTML attributes provide additional information about HTML elements. Some common attributes include:</p>
+                <ul class="list-disc ml-8">
+                    <li><code>class</code> attribute for styling</li>
+                    <li><code>id</code> attribute for unique identification</li>
+                    <li><code>src</code> attribute for specifying the URL of an image</li>
+                    <li><code>href</code> attribute for specifying the URL of a link</li>
+                    <li><code>alt</code> attribute for alternative text for images</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="back-button">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        
+    </div>
+    <!-- Include Font Awesome for the dropdown icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- JavaScript to handle dropdown click -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const htmlDropdownTitle = document.getElementById("htmlDropdownTitle");
+            const htmlDropdownContent = document.getElementById("htmlDropdownContent");
+            const tagsDropdownTitle = document.getElementById("tagsDropdownTitle");
+            const tagsDropdownContent = document.getElementById("tagsDropdownContent");
+            const attributesDropdownTitle = document.getElementById("attributesDropdownTitle");
+            const attributesDropdownContent = document.getElementById("attributesDropdownContent");
+
+            htmlDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(htmlDropdownContent);
+            });
+
+            tagsDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(tagsDropdownContent);
+            });
+
+            attributesDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(attributesDropdownContent);
+            });
+
+            function toggleDropdown(dropdownContent) {
+                // Toggle dropdown content visibility
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS Tutorial</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Font Awesome for the dropdown icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional styling */
+        .dropdown {
+            border: 5px solid #474747; /* Border */
+            padding: 1rem;
+            width: 80%;
+            margin-left: 10%;
+            border-radius: 0.5rem; /* Rounded corners */
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown-title {
+            padding: 0.5rem 1rem; /* Padding */
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 1rem; /* Spacing from right */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 9999; /* Ensure it's above other content */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="font-bold">ReactJS Tutorial</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-8">
+        <!-- Dropdown Title - React Basics -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="reactBasicsDropdownTitle">Pengenalan React <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - React Basics -->
+            <div class="dropdown-content mt-2 ml-4" id="reactBasicsDropdownContent">
+                <p class="mb-4">
+                    ReactJS adalah pustaka JavaScript yang digunakan untuk membangun antarmuka pengguna (UI) dalam aplikasi web. React memungkinkan pengembang untuk membuat komponen UI yang dinamis dan reaktif, yang memungkinkan aplikasi untuk merespons perubahan data dengan cepat dan efisien. Beberapa konsep utama dalam ReactJS meliputi:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Komponen: React memecah UI menjadi komponen-komponen yang dapat dikelola secara terpisah.</li>
+                    <li>Props: Props (atau properties) digunakan untuk mengirim data dari komponen induk ke komponen anak.</li>
+                    <li>State: State digunakan untuk menyimpan data yang akan berubah selama siklus hidup komponen.</li>
+                    <li>Virtual DOM: React menggunakan struktur data yang disebut Virtual DOM untuk memperbarui UI secara efisien.</li>
+                    <li>Cycle of Life: Komponen React memiliki siklus hidup yang terdiri dari beberapa metode yang dipanggil dalam urutan tertentu.</li>
+                    <li>Event Handling: React memungkinkan penanganan event menggunakan sintaks yang serupa dengan HTML.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - React Components -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="componentsDropdownTitle">Komponen React <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - React Components -->
+            <div class="dropdown-content mt-2 ml-4" id="componentsDropdownContent">
+                <p class="mb-4">
+                    Komponen adalah bagian penting dari pengembangan aplikasi React. Mereka memungkinkan Anda untuk membagi UI menjadi bagian-bagian yang lebih kecil, yang dapat dikelola secara terpisah. Berikut adalah beberapa jenis komponen yang umum digunakan dalam React:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Komponen Fungsional: Komponen fungsional adalah fungsi JavaScript biasa yang menerima props sebagai parameter dan mengembalikan elemen React.</li>
+                    <li>Komponen Kelas: Komponen kelas adalah kelas JavaScript yang mewarisi dari kelas <code>React.Component</code> dan memiliki state serta metode siklus hidup.</li>
+                    <li>Komponen Anak: Komponen anak adalah komponen yang ditempatkan di dalam komponen lain dan menerima data melalui props.</li>
+                    <li>Komponen Tertanam: Komponen tertanam adalah komponen yang diimpor dan digunakan di dalam komponen lain.</li>
+                    <li>Komponen Presentasi dan Kontainer: Komponen presentasi (dumb components) hanya bertanggung jawab untuk menampilkan UI, sementara komponen kontainer (smart components) mengelola logika aplikasi dan state.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - React Props -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="propsDropdownTitle">Props React <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - React Props -->
+            <div class="dropdown-content mt-2 ml-4" id="propsDropdownContent">
+                <p class="mb-4">
+                    Props (atau properties) adalah mekanisme untuk mengirim data dari satu komponen ke komponen lain dalam React. Props bersifat read-only, yang berarti bahwa komponen tidak dapat mengubah props yang diterimanya. Berikut adalah beberapa hal yang perlu diketahui tentang props dalam React:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Penggunaan: Props digunakan untuk mengirim data dari komponen induk ke komponen anak.</li>
+                    <li>Read-only: Props bersifat read-only, sehingga komponen tidak dapat mengubah props yang diterimanya.</li>
+                    <li>Deklarasi: Props dideklarasikan sebagai atribut pada elemen komponen dalam sintaks JSX.</li>
+                    <li>Destructuring: Anda dapat menggunakan destructuring untuk mengakses nilai props dengan lebih mudah.</li>
+                    <li>Default Props: Anda dapat menentukan default props untuk komponen menggunakan properti <code>defaultProps</code>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - React State -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="stateDropdownTitle">State React <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - React State -->
+            <div class="dropdown-content mt-2 ml-4" id="stateDropdownContent">
+                <p class="mb-4">
+                    State digunakan dalam React untuk menyimpan data yang akan berubah selama siklus hidup komponen. State berbeda dengan props dalam hal bahwa state dikelola di dalam komponen, sedangkan props dikirim dari komponen induk ke komponen anak. Berikut adalah beberapa hal yang perlu diketahui tentang state dalam React:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Deklarasi: State dideklarasikan dalam konstruktor komponen menggunakan <code>this.state</code>.</li>
+                    <li>Perubahan State: State harus diperbarui dengan menggunakan metode <code>this.setState()</code>, yang memicu pembaruan UI.</li>
+                    <li>Asynchronous: <code>this.setState()</code> adalah asinkron, jadi Anda tidak dapat mengandalkan nilai state yang baru segera setelah memanggilnya.</li>
+                    <li>Stateful Components: Komponen yang memiliki state disebut komponen berkelanjutan (stateful components).</li>
+                    <li>Fungsi setState: Anda juga dapat menggunakan fungsi dalam <code>setState()</code> untuk melakukan perubahan berdasarkan nilai state sebelumnya.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - React Lifecycle -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="lifecycleDropdownTitle">Siklus Hidup React <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - React Lifecycle -->
+            <div class="dropdown-content mt-2 ml-4" id="lifecycleDropdownContent">
+                <p class="mb-4">
+                    Siklus hidup komponen adalah serangkaian metode yang dipanggil dalam urutan tertentu selama fase kehidupan komponen dalam React. Pemahaman siklus hidup sangat penting untuk mengelola state, melakukan tugas-tugas tertentu pada saat yang tepat, dan mencegah masalah kinerja. Berikut adalah beberapa fase siklus hidup utama dalam React:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Mounting: Fase pertama dalam siklus hidup, terjadi saat komponen dipasang pertama kali ke DOM.</li>
+                    <li>Updating: Terjadi saat komponen diperbarui dan menerima props baru atau mengalami perubahan state.</li>
+                    <li>Unmounting: Fase terakhir dalam siklus hidup, terjadi saat komponen dihapus dari DOM.</li>
+                    <li>Error Handling: Fase tambahan yang digunakan untuk menangani kesalahan yang terjadi selama rendering, pembaruan, atau unmounting komponen.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - React Hooks -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="hooksDropdownTitle">React Hooks <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - React Hooks -->
+            <div class="dropdown-content mt-2 ml-4" id="hooksDropdownContent">
+                <p class="mb-4">
+                    Hooks adalah fitur baru dalam React 16.8 yang memungkinkan Anda menggunakan state dan fungsi lainnya tanpa perlu menulis kelas. Hooks memungkinkan Anda untuk menggunakan fitur-fitur React dalam komponen fungsional. Beberapa hooks yang umum digunakan dalam React adalah:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>useState: Digunakan untuk menambahkan state ke komponen fungsional.</li>
+                    <li>useEffect: Digunakan untuk menangani efek samping dalam komponen fungsional, seperti melakukan panggilan HTTP atau langganan.</li>
+                    <li>useContext: Digunakan untuk mengakses konteks dalam komponen fungsional.</li>
+                    <li>useReducer: Alternatif untuk <code>useState</code> yang lebih kuat, digunakan untuk mengelola state kompleks.</li>
+                    <li>useRef: Digunakan untuk membuat referensi ke elemen DOM atau nilai dalam komponen fungsional.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="back-button">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <!-- Include Font Awesome for the dropdown icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- JavaScript to handle dropdown click -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const reactBasicsDropdownTitle = document.getElementById("reactBasicsDropdownTitle");
+            const reactBasicsDropdownContent = document.getElementById("reactBasicsDropdownContent");
+            const componentsDropdownTitle = document.getElementById("componentsDropdownTitle");
+            const componentsDropdownContent = document.getElementById("componentsDropdownContent");
+            const propsDropdownTitle = document.getElementById("propsDropdownTitle");
+            const propsDropdownContent = document.getElementById("propsDropdownContent");
+            const stateDropdownTitle = document.getElementById("stateDropdownTitle");
+            const stateDropdownContent = document.getElementById("stateDropdownContent");
+            const lifecycleDropdownTitle = document.getElementById("lifecycleDropdownTitle");
+            const lifecycleDropdownContent = document.getElementById("lifecycleDropdownContent");
+            const hooksDropdownTitle = document.getElementById("hooksDropdownTitle");
+            const hooksDropdownContent = document.getElementById("hooksDropdownContent");
+
+            reactBasicsDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(reactBasicsDropdownContent);
+            });
+
+            componentsDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(componentsDropdownContent);
+            });
+
+            propsDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(propsDropdownContent);
+            });
+
+            stateDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(stateDropdownContent);
+            });
+
+            lifecycleDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(lifecycleDropdownContent);
+            });
+
+            hooksDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(hooksDropdownContent);
+            });
+
+            function toggleDropdown(dropdownContent) {
+                // Toggle dropdown content visibility
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            }
+        });
+    </script>
+</body>
+
+</html>

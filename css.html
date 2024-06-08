@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Font Awesome for the dropdown icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional styling */
+        .dropdown {
+            border: 5px solid #474747; /* Border */
+            padding: 1rem;
+            width: 80%;
+            margin-left: 10%;
+            border-radius: 0.5rem; /* Rounded corners */
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown-title {
+            padding: 0.5rem 1rem; /* Padding */
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 1rem; /* Spacing from right */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 9999; /* Ensure it's above other content */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="font-bold">CSS Tutorial</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-8">
+        <!-- Dropdown Title - CSS Basics -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="cssDropdownTitle">Pengenalan CSS <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - CSS Basics -->
+            <div class="dropdown-content mt-2 ml-4" id="cssDropdownContent">
+                <p class="mb-4">
+                    Cascading Style Sheets (CSS) adalah bahasa stylesheet yang digunakan untuk mengatur tampilan elemen-elemen dalam sebuah dokumen HTML. CSS memungkinkan Anda untuk mengontrol warna, font, ukuran, jarak, dan tata letak dari elemen-elemen halaman web.
+                </p>
+                <p>
+                    Beberapa konsep utama dalam CSS meliputi:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Selector: CSS menggunakan selector untuk menargetkan elemen HTML dan menerapkan gaya padanya.</li>
+                    <li>Properti: Properti CSS mendefinisikan tampilan elemen HTML, seperti warna, ukuran font, lebar, tinggi, dll.</li>
+                    <li>Nilai: Properti CSS diberikan nilai yang menentukan bagaimana pengaruhnya terhadap tampilan elemen.</li>
+                    <li>Kelas dan ID: Kelas dan ID CSS digunakan untuk menerapkan gaya pada elemen tertentu atau grup elemen.</li>
+                    <li>Model Kotak: Model kotak CSS menjelaskan bagaimana elemen dirender di halaman, termasuk konten, padding, border, dan margin.</li>
+                    <li>Tata Letak: CSS dapat digunakan untuk membuat struktur tata letak yang berbeda, seperti tata letak grid, tata letak flexbox, dan tata letak berbasis float.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - CSS Selectors -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="selectorsDropdownTitle">Selector CSS <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - CSS Selectors -->
+            <div class="dropdown-content mt-2 ml-4" id="selectorsDropdownContent">
+                <p class="mb-4">
+                    Selector CSS digunakan untuk menentukan elemen mana yang akan diberikan gaya. Berikut adalah beberapa contoh selector CSS yang umum digunakan:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Selector Elemen: Selector elemen langsung menargetkan elemen HTML, seperti <code>p</code> untuk paragraf atau <code>h1</code> untuk judul level 1.</li>
+                    <li>Selector Kelas: Selector kelas digunakan untuk menargetkan elemen dengan kelas tertentu, seperti <code>.container</code>.</li>
+                    <li>Selector ID: Selector ID menargetkan elemen dengan ID tertentu, seperti <code>#header</code>.</li>
+                    <li>Selector Universal: Selector universal (<code>*</code>) menargetkan semua elemen dalam dokumen.</li>
+                    <li>Selector Pseudoclass: Selector pseudoclass digunakan untuk menargetkan elemen dalam keadaan tertentu, seperti <code>:hover</code> untuk saat elemen sedang dihover oleh kursor.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - CSS Properties -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="propertiesDropdownTitle">Properti CSS <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - CSS Properties -->
+            <div class="dropdown-content mt-2 ml-4" id="propertiesDropdownContent">
+                <p class="mb-4">
+                    Properti CSS digunakan untuk mengontrol tampilan dan perilaku elemen HTML. Berikut adalah beberapa contoh properti CSS yang umum digunakan:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li><code>color</code>: Mengatur warna teks.</li>
+                    <li><code>font-size</code>: Mengatur ukuran font.</li>
+                    <li><code>background-color</code>: Mengatur warna latar belakang elemen.</li>
+                    <li><code>padding</code>: Mengatur ruang di dalam batas elemen.</li>
+                    <li><code>margin</code>: Mengatur ruang di luar batas elemen.</li>
+                    <li><code>border</code>: Mengatur garis batas elemen.</li>
+                    <li><code>display</code>: Mengatur cara elemen dirender di halaman.</li>
+                    <li><code>position</code>: Mengatur posisi elemen dalam tata letak dokumen.</li>
+                    <li><code>float</code>: Mengatur apakah elemen mengapung di sebelah kiri atau kanan dari elemen sekitarnya.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dropdown Title - CSS Layout -->
+        <div class="dropdown mb-4">
+            <span class="text-2xl font-bold flex justify-between cursor-pointer hover:text-gray-600" id="layoutDropdownTitle">Tata Letak CSS <i class="fas fa-caret-down"></i></span>
+            <!-- Dropdown Content - CSS Layout -->
+            <div class="dropdown-content mt-2 ml-4" id="layoutDropdownContent">
+                <p class="mb-4">
+                    Tata letak CSS mengacu pada cara elemen-elemen dalam halaman web diatur dan diorganisasi. Berikut adalah beberapa teknik tata letak CSS yang umum digunakan:
+                </p>
+                <ul class="list-disc ml-8">
+                    <li>Grid Layout: Grid layout memungkinkan Anda untuk membuat tata letak yang kompleks dengan menggunakan baris dan kolom.</li>
+                    <li>Flexbox Layout: Flexbox layout memberikan cara yang lebih mudah untuk mengatur elemen dalam baris atau kolom.</li>
+                    <li>Float Layout: Float layout mengapungkan elemen di sebelah kiri atau kanan elemen lain.</li>
+                    <li>Positioning: Positioning memungkinkan Anda untuk menentukan posisi elemen secara tepat dalam tata letak.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="back-button">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <!-- Include Font Awesome for the dropdown icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- JavaScript to handle dropdown click -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cssDropdownTitle = document.getElementById("cssDropdownTitle");
+            const cssDropdownContent = document.getElementById("cssDropdownContent");
+            const selectorsDropdownTitle = document.getElementById("selectorsDropdownTitle");
+            const selectorsDropdownContent = document.getElementById("selectorsDropdownContent");
+            const propertiesDropdownTitle = document.getElementById("propertiesDropdownTitle");
+            const propertiesDropdownContent = document.getElementById("propertiesDropdownContent");
+            const layoutDropdownTitle = document.getElementById("layoutDropdownTitle");
+            const layoutDropdownContent = document.getElementById("layoutDropdownContent");
+
+            cssDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(cssDropdownContent);
+            });
+
+            selectorsDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(selectorsDropdownContent);
+            });
+
+            propertiesDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(propertiesDropdownContent);
+            });
+
+            layoutDropdownTitle.addEventListener("click", function() {
+                toggleDropdown(layoutDropdownContent);
+            });
+
+            function toggleDropdown(dropdownContent) {
+                // Toggle dropdown content visibility
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            }
+        });
+    </script>
+</body>
+
+</html>
